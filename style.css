@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+
+@theme {
+    --color-pitch: #1F6B3D;   
+    --color-cream: #F6F8F4;  
+    --color-mint: #E4EEE0;    
+    --color-gold: #D4A017;    
+    --color-sand: #FBF1DA;    
+    --color-fog: #EEF1EC;     
+    --color-ink: #173D24; 
+}
+
+
+.cards-container {
+    @apply w-[min(100vw,calc(140vh*5/7))] mx-auto bg-mint rounded-2xl grid grid-cols-8 gap-3 p-6 perspective-[1000px]
+}
+.main-card {
+    @apply relative w-full aspect-5/7 transition-transform duration-500 transform-3d flex justify-center items-center cursor-pointer
+}
+.front-card {
+    @apply absolute inset-0 flex items-center justify-center bg-pitch hover:bg-emerald-900 rounded-lg backface-hidden
+}
+.back-card {
+    @apply absolute inset-0 flex items-center justify-center bg-white rounded-lg backface-hidden transform-[rotateY(180deg)]
+}
+.true {
+    @apply  border-gold border-2
+}
+.stat-box {
+    @apply px-5 py-2.5 rounded-xl text-ink flex items-center gap-3 min-w-27.5
+}
+.stat-label {
+    @apply text-lg text-black/40 leading-none mb-1
+}
+.stat-value {
+    @apply text-lg font-bold leading-tight mt-0.5 text-center
+}
+.btn {
+    @apply px-12 py-3 mr-5 rounded-lg text-ink flex justify-center items-center gap-3
+}
+.num {
+    @apply text-black font-bold
+}

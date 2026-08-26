@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./src/output.css">
+    <title>Match Day Game</title>
+</head>
+
+<body class="bg-mint overflow-hidden">
+    <div class="main-container bg-white/80 rounded-2xl m-6 py-2 ">
+        <header class="flex justify-between my-10 px-12 pb-5 border-b-4 border-b-mint">
+            <div class="title-box flex">
+                <div class="img flex justify-center items-center mr-3 bg-emerald-600 w-14 h-14 rounded-lg">
+                    <img src="icons/ball.svg" alt="" width="35">
+                </div>
+                <div class="title">
+                    <h2 class="text-4xl font-bold ">Match Day Game</h2>
+                    <h6>match the signals before you run out of tries</h6>
+                </div>
+            </div>
+            <div class="state-box flex gap-4">
+                <div class="stat-box bg-fog timer">
+                    <img src="./icons/chronometer.png" width="30" alt="">
+                    <div class="flex flex-col ml-2">
+                        <span class="stat-label">Timer</span>
+                        <span class="num stat-value">0:00</span>
+                    </div>
+                </div>
+                <div class="stat-box bg-sand score">
+                    <img src="./icons/achievement.png" width="30" alt="">
+                    <div class="flex flex-col ml-2">
+                        <span class="stat-label">Score</span>
+                        <span class="num stat-value">0</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="flex justify-center items-center ">
+            <div class="cards-container">
+            </div>
+        </section>
+        <footer class="flex justify-center gap-6 my-7">
+            <div class="reset-container font-bold cursor-pointer btn text-white bg-pitch hover:bg-emerald-600 ">
+                <img src="icons/reboot.png" width="30">
+                <button class="reset-game text-white">Reset Game</button>
+            </div>
+            <div class="moves-container btn bg-fog num">
+                <img src="./icons/move-right.png" width="30" alt="move">
+                <div class="try">Moves <span class="ml-1">0</span></div>
+            </div>
+        </footer>
+        <div id="toast" class="fixed top-8 left-1/2 -translate-x-1/2 -translate-y-3 opacity-0 scale-95
+            transition-all duration-500 ease-out
+            bg-cream border border-gold rounded-2xl px-6 py-4 shadow-lg
+            flex items-center gap-3 pointer-events-none z-50">
+            <span class="emoji text-2xl mr-1"></span>
+            <div>
+                <p class="title font-bold text-ink text-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                <p class="message text-pitch text-sm mt-0.5">Lorem ipsum dolor sit amet</p>
+            </div>
+        </div>
+        <div id="end-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none
+            transition-opacity duration-300 flex items-center justify-center z-50">
+            <div class="bg-cream rounded-3xl px-10 py-8 max-w-sm w-full mx-4 text-center
+                scale-90 transition-transform duration-300 shadow-2xl">
+
+                <div class="end-icon text-7xl mb-3"></div>
+                <h2 class="end-title text-2xl font-bold text-ink mb-1"></h2>
+                <p class="end-message text-pitch text-sm mb-6"></p>
+
+                <div class="grid grid-cols-3 gap-3 mb-6">
+                    <div class="bg-fog rounded-xl py-3">
+                        <div class="text-xs text-gold-text">SCORE</div>
+                        <div class="end-score font-bold text-ink text-lg"></div>
+                    </div>
+                    <div class="bg-fog rounded-xl py-3">
+                        <div class="text-xs text-gold-text">MOVES</div>
+                        <div class="end-moves font-bold text-ink text-lg"></div>
+                    </div>
+                    <div class="bg-fog rounded-xl py-3">
+                        <div class="text-xs text-gold-text">TIME</div>
+                        <div class="end-time font-bold text-ink text-lg"></div>
+                    </div>
+                </div>
+
+                <button class="end-play-again w-full bg-pitch text-white font-bold py-3 rounded-xl cursor-pointer">Play again </button>
+            </div>
+        </div>
+    </div>
+    <script src="./game.js"></script>
+</body>
+
+</html>
